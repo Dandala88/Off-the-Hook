@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class FishController : MonoBehaviour
 {
@@ -14,6 +15,10 @@ public class FishController : MonoBehaviour
     private float rotationSensitivity;
     [SerializeField]
     private bool invertY;
+    [SerializeField]
+    private float mouseDeadZone;
+    [SerializeField]
+    private float mouseSpeed;
 
     private CharacterController characterController;
     private Vector2 input;
@@ -30,6 +35,12 @@ public class FishController : MonoBehaviour
 
     private void Update()
     {
+        Vector2 mouse = new Vector2(Mouse.current.position.value.x - Screen.width / 2, Mouse.current.position.value.y - Screen.height / 2);
+        if (Vector2.Distance(mouse, Vector2.zero) > mouseDeadZone)
+            input = mouse * mouseSpeed * Time.deltaTime;
+        else
+            input = Vector2.zero;
+            
         int inverted = invertY ? 1 : -1;
         currentRotation.y += input.y;
         currentRotation.x += input.x;

@@ -978,6 +978,8 @@ MonoBehaviour:
   maxSpeed: 6
   rotationSensitivity: 0.25
   invertY: 0
+  mouseDeadZone: 20
+  mouseSpeed: 0.5
 --- !u!1 &2032751468
 GameObject:
   m_ObjectHideFlags: 0
