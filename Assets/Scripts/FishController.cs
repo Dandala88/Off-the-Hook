@@ -12,11 +12,14 @@ public class FishController : MonoBehaviour
     [Tooltip("Higher the number the more sensitive")]
     [Min(0.01f)]
     private float rotationSensitivity;
+    [SerializeField]
+    private bool invertY;
 
     private CharacterController characterController;
     private Vector2 input;
     private Vector3 movement;
     private float currentSpeed;
+    private Vector2 currentRotation;
 
     bool swimming;
 
@@ -27,7 +30,10 @@ public class FishController : MonoBehaviour
 
     private void Update()
     {
-        transform.Rotate(input.y * rotationSensitivity, input.x * rotationSensitivity, 0f);
+        int inverted = invertY ? 1 : -1;
+        currentRotation.y += input.y;
+        currentRotation.x += input.x;
+        transform.localRotation = Quaternion.Euler(currentRotation.y * inverted * rotationSensitivity, currentRotation.x * rotationSensitivity, 0f);
         currentSpeed = swimming ? currentSpeed + acceleration * Time.deltaTime : currentSpeed - acceleration * Time.deltaTime;
 
         if (currentSpeed > maxSpeed) currentSpeed = maxSpeed;
