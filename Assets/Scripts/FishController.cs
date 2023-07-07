@@ -19,6 +19,8 @@ public class FishController : MonoBehaviour
     private float mouseDeadZone;
     [SerializeField]
     private float mouseSpeed;
+    [SerializeField]
+    private float maxYRotate;
 
     private CharacterController characterController;
     private Vector2 input;
@@ -44,6 +46,8 @@ public class FishController : MonoBehaviour
         int inverted = invertY ? 1 : -1;
         currentRotation.y += input.y;
         currentRotation.x += input.x;
+        if(Mathf.Abs(currentRotation.y) > maxYRotate) currentRotation.y = maxYRotate * Mathf.Sign(currentRotation.y);
+        Debug.Log(currentRotation.y);
         transform.localRotation = Quaternion.Euler(currentRotation.y * inverted * rotationSensitivity, currentRotation.x * rotationSensitivity, 0f);
         currentSpeed = swimming ? currentSpeed + acceleration * Time.deltaTime : currentSpeed - acceleration * Time.deltaTime;
 
