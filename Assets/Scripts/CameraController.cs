@@ -12,16 +12,27 @@ public class CameraController : MonoBehaviour
     private float maxYRotate;
     [SerializeField]
     private float maxXRotate;
+    [SerializeField]
+    private float rotateSpeed;
 
     private Vector2 currentRotation;
     private Vector2 rotateInput;
 
     private void LateUpdate()
     {
-        currentRotation.x += rotateInput.x;
-        currentRotation.y += rotateInput.y;
+        currentRotation.x += rotateInput.x * Time.deltaTime * rotateSpeed;
+        currentRotation.y += rotateInput.y * Time.deltaTime * rotateSpeed;
         if (Mathf.Abs(currentRotation.y) > maxYRotate) currentRotation.y = maxYRotate * Mathf.Sign(currentRotation.y);
+
+        var camForward = transform.forward;
+        camForward.y = 0f;
+        var followForward = follow.forward;
+        followForward.y = 0f;
+        var followToCamAngle = Mathf.Abs(Vector3.SignedAngle(camForward, followForward, Vector3.up));
+
         transform.rotation = Quaternion.Euler(currentRotation.y, currentRotation.x, 0);
+
+        transform.position = follow.position + offset;
     }
 
     public void Rotate(Vector2 rotateInput)

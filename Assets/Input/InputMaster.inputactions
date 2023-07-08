@@ -50,7 +50,7 @@
                     "id": "9bf9b18c-b2cd-44f3-8479-76b197001cbf",
                     "path": "2DVector(mode=2)",
                     "interactions": "",
-                    "processors": "InvertVector2(invertX=false),ScaleVector2(x=0.025,y=0.1)",
+                    "processors": "InvertVector2(invertX=false),ScaleVector2",
                     "groups": "",
                     "action": "Rotate",
                     "isComposite": true,

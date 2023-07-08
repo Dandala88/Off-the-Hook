@@ -9,6 +9,8 @@ public class FishController : MonoBehaviour
     private float acceleration;
     [SerializeField]
     private float maxSpeed;
+    [SerializeField]
+    private float turnSpeed;
 
     private CharacterController characterController;
     private CameraController cameraController;
@@ -24,6 +26,7 @@ public class FishController : MonoBehaviour
         cameraController = Camera.main.GetComponent<CameraController>();
     }
 
+    Vector3 v = Vector3.zero;
     private void Update()
     {
         actualAcceleration = acceleration;
@@ -34,8 +37,11 @@ public class FishController : MonoBehaviour
         if (currentSpeed > maxSpeed) currentSpeed = maxSpeed;
         if (currentSpeed < 0) currentSpeed = 0;
 
-        if(currentSpeed > 0)
-            transform.forward = cameraController.transform.forward;
+        if (currentSpeed > 0)
+        {
+            var relativeTurn = turnSpeed * (currentSpeed / maxSpeed);
+            transform.forward = Vector3.SmoothDamp(transform.forward, cameraController.transform.forward, ref v, relativeTurn);
+        }
 
         characterController.Move(transform.forward * currentSpeed * Time.deltaTime);
     }

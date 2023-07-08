@@ -1248,7 +1248,8 @@ MonoBehaviour:
   follow: {fileID: 2002726800}
   offset: {x: 0, y: 0, z: 0}
   maxYRotate: 80
-  maxXRotate: 50
+  maxXRotate: 10
+  rotateSpeed: 5
 --- !u!1 &1435490182
 GameObject:
   m_ObjectHideFlags: 0
@@ -1980,6 +1981,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceleration: 6
   maxSpeed: 6
+  turnSpeed: 1
 --- !u!1 &2032751468
 GameObject:
   m_ObjectHideFlags: 0
