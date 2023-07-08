@@ -1,12 +1,14 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="Settings" src="project://database/Assets/UI/Settings/Settings.uxml?fileID=9197481963319205126&amp;guid=d46ef2196b6f09244969c20cb1e2cdfd&amp;type=3#Settings" />
     <Style src="project://database/Assets/UI/Defaults.uss?fileID=7433441132597879392&amp;guid=3e9a8aa20d64d1d4cb8dd15a5d9f16be&amp;type=3#Defaults" />
     <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); position: absolute; left: 0; top: 0; right: 0; bottom: 0; padding-left: 24px; padding-right: 24px; padding-top: 24px; padding-bottom: 24px;">
-        <ui:VisualElement name="Logo" style="flex-grow: initial; background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/UI/download.jpg?fileID=2800000&amp;guid=11485cb55de991845b06a36b53761d47&amp;type=3#download&apos;); width: 400px; height: 200px; -unity-background-scale-mode: stretch-to-fill;" />
+        <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/UI/Logos/MergedLogo.png?fileID=2800000&amp;guid=42d50cc8e92e00546b023f2f00115316&amp;type=3#MergedLogo&apos;); width: auto; -unity-background-scale-mode: scale-to-fit;" />
         <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);" />
-        <ui:VisualElement name="Buttons" style="flex-grow: initial; background-color: rgba(0, 0, 0, 0); align-items: flex-start;">
+        <ui:VisualElement name="Buttons" style="flex-grow: initial; background-color: rgba(0, 0, 0, 0); align-items: center; -unity-text-align: upper-left;">
             <ui:Button text="START LIVIN&apos;" display-tooltip-when-elided="true" name="Start" />
-            <ui:Button text="SETTINGS" display-tooltip-when-elided="true" name="Settings" />
+            <ui:Button text="SETTINGS" display-tooltip-when-elided="true" name="SettingsButton" />
             <ui:Button text="EXIT GAME" display-tooltip-when-elided="true" name="Quit" class="last" />
         </ui:VisualElement>
     </ui:VisualElement>
+    <ui:Instance template="Settings" name="Settings" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; display: none;" />
 </ui:UXML>
