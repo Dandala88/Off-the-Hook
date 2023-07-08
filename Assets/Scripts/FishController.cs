@@ -10,7 +10,8 @@ public class FishController : MonoBehaviour
     [SerializeField]
     private float maxSpeed;
     [SerializeField]
-    private float turnSpeed;
+    [Tooltip("The time it takes to turn around at max speed")]
+    private float turnTime;
 
     private CharacterController characterController;
     private CameraController cameraController;
@@ -39,7 +40,7 @@ public class FishController : MonoBehaviour
 
         if (currentSpeed > 0)
         {
-            var relativeTurn = turnSpeed * (currentSpeed / maxSpeed);
+            var relativeTurn = turnTime * (currentSpeed / maxSpeed);
             transform.forward = Vector3.SmoothDamp(transform.forward, cameraController.transform.forward, ref v, relativeTurn);
         }
 

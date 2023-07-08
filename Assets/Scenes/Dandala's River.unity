@@ -1979,9 +1979,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aef5fd163c0f474c8c7841fdc6c7772, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceleration: 6
-  maxSpeed: 6
-  turnSpeed: 1
+  acceleration: 3
+  maxSpeed: 8
+  turnTime: 1
 --- !u!1 &2032751468
 GameObject:
   m_ObjectHideFlags: 0
