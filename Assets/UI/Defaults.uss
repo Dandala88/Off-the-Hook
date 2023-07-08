@@ -1,0 +1,9 @@
+.unity-button {
+  padding: 8px 12px;
+  margin: 0;
+  margin-bottom: 16px;
+}
+
+.unity-button.last {
+  margin-bottom: 0;
+}
