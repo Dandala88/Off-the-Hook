@@ -9,13 +9,10 @@ public class FishController : MonoBehaviour
     private float acceleration;
     [SerializeField]
     private float maxSpeed;
-    [SerializeField]
-    private float maxYRotate;
 
     private CharacterController characterController;
-    private Vector2 rotateInput;
+    private CameraController cameraController;
     private float currentSpeed;
-    private Vector2 currentRotation;
     private float actualAcceleration;
 
     bool swimming;
@@ -24,6 +21,7 @@ public class FishController : MonoBehaviour
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
+        cameraController = Camera.main.GetComponent<CameraController>();
     }
 
     private void Update()
@@ -31,22 +29,15 @@ public class FishController : MonoBehaviour
         actualAcceleration = acceleration;
         if (braking) actualAcceleration = acceleration * 2;
 
-        currentRotation.y += rotateInput.y;
-        currentRotation.x += rotateInput.x;
-        if(Mathf.Abs(currentRotation.y) > maxYRotate) currentRotation.y = maxYRotate * Mathf.Sign(currentRotation.y);
-
-        transform.localRotation = Quaternion.Euler(currentRotation.y, currentRotation.x, 0f);
         currentSpeed = swimming ? currentSpeed + actualAcceleration * Time.deltaTime : currentSpeed - actualAcceleration * Time.deltaTime;
 
         if (currentSpeed > maxSpeed) currentSpeed = maxSpeed;
         if (currentSpeed < 0) currentSpeed = 0;
 
-        characterController.Move(transform.forward * currentSpeed * Time.deltaTime);
-    }
+        if(currentSpeed > 0)
+            transform.forward = cameraController.transform.forward;
 
-    public void Rotate(Vector2 rotateInput)
-    {
-        this.rotateInput = rotateInput;
+        characterController.Move(transform.forward * currentSpeed * Time.deltaTime);
     }
 
     public void Swim(bool activated)
