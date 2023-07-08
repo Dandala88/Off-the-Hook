@@ -15,8 +15,10 @@ public class FishController : MonoBehaviour
 
     private CharacterController characterController;
     private CameraController cameraController;
-    public float currentSpeed;
+    private float currentSpeed;
     private float actualAcceleration;
+
+    [HideInInspector]
     public Vector3 currentForce;
 
     bool swimming;
