@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class FishController : MonoBehaviour
 {
+    public float eatDistance;
     [SerializeField]
     private float acceleration;
     [SerializeField]
@@ -15,8 +16,10 @@ public class FishController : MonoBehaviour
 
     private CharacterController characterController;
     private CameraController cameraController;
-    public float currentSpeed;
+    private float currentSpeed;
     private float actualAcceleration;
+
+    [HideInInspector]
     public Vector3 currentForce;
 
     bool swimming;
