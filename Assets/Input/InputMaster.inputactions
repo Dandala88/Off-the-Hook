@@ -22,13 +22,22 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Brake",
+                    "type": "Button",
+                    "id": "f26bde32-bdc0-4470-8f37-a281d33e703a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
                     "name": "",
                     "id": "d314f8b0-fcb1-4e79-8632-e7aa4dbd7c18",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard & Mouse",
@@ -41,7 +50,7 @@
                     "id": "9bf9b18c-b2cd-44f3-8479-76b197001cbf",
                     "path": "2DVector(mode=2)",
                     "interactions": "",
-                    "processors": "InvertVector2(invertX=false),ScaleVector2(x=0.1,y=0.1)",
+                    "processors": "InvertVector2(invertX=false),ScaleVector2(x=0.05,y=0.1)",
                     "groups": "",
                     "action": "Rotate",
                     "isComposite": true,
@@ -90,6 +99,17 @@
                     "action": "Rotate",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "3faaf1ad-2c46-4411-94f2-ba9b3f60a94a",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Brake",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

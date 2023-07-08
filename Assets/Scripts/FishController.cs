@@ -16,8 +16,10 @@ public class FishController : MonoBehaviour
     private Vector2 rotateInput;
     private float currentSpeed;
     private Vector2 currentRotation;
+    private float actualAcceleration;
 
     bool swimming;
+    bool braking;
 
     private void Awake()
     {
@@ -25,13 +27,16 @@ public class FishController : MonoBehaviour
     }
 
     private void Update()
-    {       
+    {
+        actualAcceleration = acceleration;
+        if (braking) actualAcceleration = acceleration * 2;
+
         currentRotation.y += rotateInput.y;
         currentRotation.x += rotateInput.x;
-        Debug.Log(currentRotation.y);
         if(Mathf.Abs(currentRotation.y) > maxYRotate) currentRotation.y = maxYRotate * Mathf.Sign(currentRotation.y);
+
         transform.localRotation = Quaternion.Euler(currentRotation.y, currentRotation.x, 0f);
-        currentSpeed = swimming ? currentSpeed + acceleration * Time.deltaTime : currentSpeed - acceleration * Time.deltaTime;
+        currentSpeed = swimming ? currentSpeed + actualAcceleration * Time.deltaTime : currentSpeed - actualAcceleration * Time.deltaTime;
 
         if (currentSpeed > maxSpeed) currentSpeed = maxSpeed;
         if (currentSpeed < 0) currentSpeed = 0;
@@ -47,5 +52,10 @@ public class FishController : MonoBehaviour
     public void Swim(bool activated)
     {
         swimming = activated;
+    }
+
+    public void Brake(bool activated)
+    {
+        braking = activated;
     }
 }

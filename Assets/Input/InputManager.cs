@@ -32,4 +32,12 @@ public class InputManager : MonoBehaviour
             fish.Swim(false);
     }
 
+    public void Brake(InputAction.CallbackContext context)
+    {
+        if (context.started)
+            fish.Brake(true);
+
+        if (context.canceled)
+            fish.Brake(false);
+    }
 }
