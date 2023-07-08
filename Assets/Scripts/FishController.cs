@@ -15,8 +15,9 @@ public class FishController : MonoBehaviour
 
     private CharacterController characterController;
     private CameraController cameraController;
-    private float currentSpeed;
+    public float currentSpeed;
     private float actualAcceleration;
+    public Vector3 currentForce;
 
     bool swimming;
     bool braking;
@@ -44,7 +45,7 @@ public class FishController : MonoBehaviour
             transform.forward = Vector3.SmoothDamp(transform.forward, cameraController.transform.forward, ref v, relativeTurn);
         }
 
-        characterController.Move(transform.forward * currentSpeed * Time.deltaTime);
+        characterController.Move((transform.forward + currentForce) * currentSpeed * Time.deltaTime);
     }
 
     public void Swim(bool activated)
