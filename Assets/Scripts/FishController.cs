@@ -5,57 +5,56 @@ using UnityEngine.InputSystem;
 
 public class FishController : MonoBehaviour
 {
-  [SerializeField]
-  private float acceleration;
-  [SerializeField]
-  private float maxSpeed;
-  [SerializeField]
-  private float maxYRotate;
+    [SerializeField]
+    private float acceleration;
+    [SerializeField]
+    private float maxSpeed;
+    [SerializeField]
+    [Tooltip("The time it takes to turn around at max speed")]
+    private float turnTime;
 
-  private CharacterController characterController;
-  private Vector2 rotateInput;
-  private float currentSpeed;
-  private Vector2 currentRotation;
-  private float actualAcceleration;
+    private CharacterController characterController;
+    private CameraController cameraController;
+    public float currentSpeed;
+    private float actualAcceleration;
+    public Vector3 currentForce;
 
-  bool swimming;
-  bool braking;
+    bool swimming;
+    bool braking;
 
-  private void Awake()
-  {
-    characterController = GetComponent<CharacterController>();
-  }
+    private void Awake()
+    {
+        characterController = GetComponent<CharacterController>();
+        cameraController = Camera.main.GetComponent<CameraController>();
+    }
 
-  private void Update()
-  {
-    actualAcceleration = acceleration;
-    if (braking) actualAcceleration = acceleration * 2;
+    Vector3 v = Vector3.zero;
+    private void Update()
+    {
+        actualAcceleration = acceleration;
+        if (braking) actualAcceleration = acceleration * 2;
 
-    currentRotation.y += rotateInput.y;
-    currentRotation.x += rotateInput.x;
-    if (Mathf.Abs(currentRotation.y) > maxYRotate) currentRotation.y = maxYRotate * Mathf.Sign(currentRotation.y);
-
-    transform.localRotation = Quaternion.Euler(currentRotation.y, currentRotation.x, 0f);
-    currentSpeed = swimming ? currentSpeed + actualAcceleration * Time.deltaTime : currentSpeed - actualAcceleration * Time.deltaTime;
+        currentSpeed = swimming ? currentSpeed + actualAcceleration * Time.deltaTime : currentSpeed - actualAcceleration * Time.deltaTime;
 
     if (currentSpeed > maxSpeed) currentSpeed = maxSpeed;
     if (currentSpeed < 0) currentSpeed = 0;
 
-    characterController.Move(transform.forward * currentSpeed * Time.deltaTime);
-  }
+        if (currentSpeed > 0)
+        {
+            var relativeTurn = turnTime * (currentSpeed / maxSpeed);
+            transform.forward = Vector3.SmoothDamp(transform.forward, cameraController.transform.forward, ref v, relativeTurn);
+        }
 
-  public void Rotate(Vector2 rotateInput)
-  {
-    this.rotateInput = rotateInput;
-  }
+        characterController.Move((transform.forward + currentForce) * currentSpeed * Time.deltaTime);
+    }
 
-  public void Swim(bool activated)
-  {
-    swimming = activated;
-  }
+    public void Swim(bool activated)
+    {
+        swimming = activated;
+    }
 
-  public void Brake(bool activated)
-  {
-    braking = activated;
-  }
+    public void Brake(bool activated)
+    {
+        braking = activated;
+    }
 }

@@ -7,6 +7,8 @@ public class InputManager : MonoBehaviour
 {
     [SerializeField]
     private FishController fish;
+    [SerializeField] 
+    private CameraController cameraController;
 
     private PlayerInput playerInput;
 
@@ -19,7 +21,7 @@ public class InputManager : MonoBehaviour
     {
         if (context.performed)
         {
-            fish.Rotate(context.ReadValue<Vector2>());
+            cameraController.Rotate(context.ReadValue<Vector2>());
         }
     }
 
