@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class FishController : MonoBehaviour
 {
+    public float eatDistance;
     [SerializeField]
     private float acceleration;
     [SerializeField]
