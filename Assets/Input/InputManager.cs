@@ -15,11 +15,11 @@ public class InputManager : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
     }
 
-    public void Move(InputAction.CallbackContext context)
+    public void Rotate(InputAction.CallbackContext context)
     {
-        if(context.performed)
+        if (context.performed)
         {
-            fish.Move(context.ReadValue<Vector2>());
+            fish.Rotate(context.ReadValue<Vector2>());
         }
     }
 

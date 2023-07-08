@@ -10,21 +10,10 @@ public class FishController : MonoBehaviour
     [SerializeField]
     private float maxSpeed;
     [SerializeField]
-    [Tooltip("Higher the number the more sensitive")]
-    [Min(0.01f)]
-    private float rotationSensitivity;
-    [SerializeField]
-    private bool invertY;
-    [SerializeField]
-    private float mouseDeadZone;
-    [SerializeField]
-    private float mouseSpeed;
-    [SerializeField]
     private float maxYRotate;
 
     private CharacterController characterController;
-    private Vector2 input;
-    private Vector3 movement;
+    private Vector2 rotateInput;
     private float currentSpeed;
     private Vector2 currentRotation;
 
@@ -36,19 +25,12 @@ public class FishController : MonoBehaviour
     }
 
     private void Update()
-    {
-        Vector2 mouse = new Vector2(Mouse.current.position.value.x - Screen.width / 2, Mouse.current.position.value.y - Screen.height / 2);
-        if (Vector2.Distance(mouse, Vector2.zero) > mouseDeadZone)
-            input = mouse * mouseSpeed * Time.deltaTime;
-        else
-            input = Vector2.zero;
-            
-        int inverted = invertY ? 1 : -1;
-        currentRotation.y += input.y;
-        currentRotation.x += input.x;
-        if(Mathf.Abs(currentRotation.y) > maxYRotate) currentRotation.y = maxYRotate * Mathf.Sign(currentRotation.y);
+    {       
+        currentRotation.y += rotateInput.y;
+        currentRotation.x += rotateInput.x;
         Debug.Log(currentRotation.y);
-        transform.localRotation = Quaternion.Euler(currentRotation.y * inverted * rotationSensitivity, currentRotation.x * rotationSensitivity, 0f);
+        if(Mathf.Abs(currentRotation.y) > maxYRotate) currentRotation.y = maxYRotate * Mathf.Sign(currentRotation.y);
+        transform.localRotation = Quaternion.Euler(currentRotation.y, currentRotation.x, 0f);
         currentSpeed = swimming ? currentSpeed + acceleration * Time.deltaTime : currentSpeed - acceleration * Time.deltaTime;
 
         if (currentSpeed > maxSpeed) currentSpeed = maxSpeed;
@@ -57,9 +39,9 @@ public class FishController : MonoBehaviour
         characterController.Move(transform.forward * currentSpeed * Time.deltaTime);
     }
 
-    public void Move(Vector2 input)
+    public void Rotate(Vector2 rotateInput)
     {
-        this.input = input;
+        this.rotateInput = rotateInput;
     }
 
     public void Swim(bool activated)
