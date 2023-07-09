@@ -21,7 +21,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5575629813654803851
 Transform:
   m_ObjectHideFlags: 0
@@ -34,7 +34,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4788658888266050369}
+  - {fileID: 2383579327280713638}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -82,7 +82,7 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3787892337921096333}
+      - m_Target: {fileID: 7666137235621963031}
         m_TargetAssemblyTypeName: SettingsController, Assembly-CSharp
         m_MethodName: Show
         m_Mode: 1
@@ -163,7 +163,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1 &4268815541479351785
+--- !u!1 &4848730258999026387
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -171,13 +171,13 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4788658888266050369}
-  - component: {fileID: 3787892337921096333}
-  - component: {fileID: 4216843648315208821}
-  - component: {fileID: 1255702552904323753}
-  - component: {fileID: 3322225792362888555}
-  - component: {fileID: 3825076836194440776}
-  - component: {fileID: 8595041260970527237}
+  - component: {fileID: 2383579327280713638}
+  - component: {fileID: 7666137235621963031}
+  - component: {fileID: 7518204100381229400}
+  - component: {fileID: 2789705565539943282}
+  - component: {fileID: 3839442213030819497}
+  - component: {fileID: 2723995919690874819}
+  - component: {fileID: 4392633047285436274}
   m_Layer: 5
   m_Name: Settings
   m_TagString: Untagged
@@ -185,14 +185,14 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4788658888266050369
+--- !u!4 &2383579327280713638
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4268815541479351785}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 4848730258999026387}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -200,29 +200,31 @@ Transform:
   m_Father: {fileID: 5575629813654803851}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3787892337921096333
+--- !u!114 &7666137235621963031
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4268815541479351785}
+  m_GameObject: {fileID: 4848730258999026387}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c7be6f6910822224c84e1623e7b35acb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   audioController: {fileID: 0}
-  volumeSlider: {fileID: 3322225792362888555}
-  settingsContainer: {fileID: 5790333590319542196}
-  SaveConfirmation: {fileID: 8595041260970527237}
---- !u!114 &4216843648315208821
+  volumeSlider: {fileID: 3839442213030819497}
+  sensSlider: {fileID: 2723995919690874819}
+  settingsContainer: {fileID: 0}
+  SaveConfirmation: {fileID: 4392633047285436274}
+  inputManager: {fileID: 0}
+--- !u!114 &7518204100381229400
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4268815541479351785}
+  m_GameObject: {fileID: 4848730258999026387}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0e6349eb4cca164cadff843e0eda298, type: 3}
@@ -232,7 +234,7 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3787892337921096333}
+      - m_Target: {fileID: 7666137235621963031}
         m_TargetAssemblyTypeName: SettingsController, Assembly-CSharp
         m_MethodName: WriteSettings
         m_Mode: 1
@@ -244,7 +246,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8595041260970527237}
+      - m_Target: {fileID: 4392633047285436274}
         m_TargetAssemblyTypeName: UILabel, Assembly-CSharp
         m_MethodName: SetOpacity
         m_Mode: 4
@@ -256,13 +258,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1255702552904323753
+--- !u!114 &2789705565539943282
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4268815541479351785}
+  m_GameObject: {fileID: 4848730258999026387}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0e6349eb4cca164cadff843e0eda298, type: 3}
@@ -272,7 +274,7 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5790333590319542196}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UIVisualElement, Assembly-CSharp
         m_MethodName: ShowElement
         m_Mode: 6
@@ -284,13 +286,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3322225792362888555
+--- !u!114 &3839442213030819497
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4268815541479351785}
+  m_GameObject: {fileID: 4848730258999026387}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c064168e574b71b438e1567c82fa1940, type: 3}
@@ -300,7 +302,7 @@ MonoBehaviour:
   OnSlide:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3787892337921096333}
+      - m_Target: {fileID: 7666137235621963031}
         m_TargetAssemblyTypeName: SettingsController, Assembly-CSharp
         m_MethodName: setVolume
         m_Mode: 0
@@ -313,13 +315,13 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   initialValue: 75
---- !u!114 &3825076836194440776
+--- !u!114 &2723995919690874819
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4268815541479351785}
+  m_GameObject: {fileID: 4848730258999026387}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c064168e574b71b438e1567c82fa1940, type: 3}
@@ -329,26 +331,26 @@ MonoBehaviour:
   OnSlide:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3787892337921096333}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 7666137235621963031}
+        m_TargetAssemblyTypeName: SettingsController, Assembly-CSharp
+        m_MethodName: setSense
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   initialValue: 0
---- !u!114 &8595041260970527237
+--- !u!114 &4392633047285436274
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4268815541479351785}
+  m_GameObject: {fileID: 4848730258999026387}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a803f6f0bf3509745b45d43f08109144, type: 3}
