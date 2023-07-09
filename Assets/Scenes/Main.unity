@@ -1941,11 +1941,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f4c1dd7e1587ad458576041d86c3eeb, type: 3}
---- !u!1 &364089714 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4173587702158310668, guid: 3f4c1dd7e1587ad458576041d86c3eeb, type: 3}
-  m_PrefabInstance: {fileID: 364089713}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &367631761
 GameObject:
   m_ObjectHideFlags: 0
@@ -9437,7 +9432,19 @@ MonoBehaviour:
     m_ActionId: f26bde32-bdc0-4470-8f37-a281d33e703a
     m_ActionName: Player/Brake[/Keyboard/s]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1768137065}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: Pause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: f2d2ea28-32d6-42ab-ac91-bb34ca6662ba
     m_ActionName: Player/Pause[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
@@ -9474,7 +9481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fish: {fileID: 2002726802}
   cameraController: {fileID: 1418092005}
-  pauseMenu: {fileID: 364089714}
+  pauseMenu: {fileID: 0}
 --- !u!1 &1770234576
 GameObject:
   m_ObjectHideFlags: 0

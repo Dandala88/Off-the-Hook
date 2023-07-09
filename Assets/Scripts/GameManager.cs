@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector]
     public int calories;
+    [HideInInspector]
+    public bool isPaused;
 
     private static GameManager instance;
 

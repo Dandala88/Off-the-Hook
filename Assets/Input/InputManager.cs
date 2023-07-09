@@ -82,8 +82,16 @@ public class InputManager : MonoBehaviour
     }
 
     public void Pause(InputAction.CallbackContext context)
-    { 
-        if(context.performed)
-            pauseMenu.SetActive(!pauseMenu.activeSelf);
+    {
+        if (context.started)
+        {
+            GameManager.Instance.isPaused = !GameManager.Instance.isPaused;
+            if(GameManager.Instance.isPaused)
+                Time.timeScale = 0;
+            else
+                Time.timeScale = 1;
+
+            pauseMenu.SetActive(GameManager.Instance.isPaused);
+        }
     }
 }
