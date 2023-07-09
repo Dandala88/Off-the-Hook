@@ -14,15 +14,19 @@ public class Collectible : MonoBehaviour
     private Rigidbody rb;
     private bool flee;
     protected bool captured;
+    protected IEnumerator movementCoroutine;
+    protected CameraController cam;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        cam = FindObjectOfType<CameraController>();
     }
 
-    private void Start()
+    protected void Start()
     {
-        StartCoroutine(Move());
+        movementCoroutine = Move();
+        StartCoroutine(movementCoroutine);
     }
 
     private IEnumerator Move()
@@ -31,7 +35,7 @@ public class Collectible : MonoBehaviour
         var time = flee ? idleMoveTime : idleMoveTime * 3;
         rb.AddForce(Extensions.RandomVector3() * distance);
         yield return new WaitForSeconds(time);
-        StartCoroutine(Move());
+        StartCoroutine(movementCoroutine);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -43,7 +47,7 @@ public class Collectible : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (!captured)
+        if (!captured && !FishController.caught)
         {
             FishController fish = other.GetComponent<FishController>();
             if (fish != null)
