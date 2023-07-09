@@ -8,19 +8,18 @@ public class BaitItem : Collectible
 {
     [SerializeField]
     private float topWaterRadius;
-    [SerializeField]
-    private float reelForce;
+    
+    public float reelForce;
     [SerializeField]
     [Range(0, 100)]
     [Tooltip("Determines screenshake.")]
     private float hookSetPower;
 
     private Line line;
-    private Vector3 lineEntry;
 
-    protected override void Awake()
+    protected override void Init()
     {
-        base.Awake();
+        base.Init();
         line = FindObjectOfType<Line>();
     }
 
@@ -30,15 +29,15 @@ public class BaitItem : Collectible
         float rollAngle = Random.Range(0f, 360f);
         float x = Mathf.Cos(rollAngle * Mathf.Deg2Rad) * topWaterRadius;
         float y = Mathf.Sin(rollAngle * Mathf.Deg2Rad) * topWaterRadius;
-        line.lineEntry = new Vector3(x, topWater.transform.position.y, y);
+        line.lineEntry = new Vector3(transform.position.x + x, topwater.transform.position.y, transform.position.z + y);
         line.bait = transform;
 
         StopCoroutine(movementCoroutine);
+        fish.caughtLineEntry = line.lineEntry;
         transform.parent = fish.transform;
         FishController.caught = true;
         StartCoroutine(cam.Shake(hookSetPower / 100));
         fish.currentSpeed = 0;
-        fish.caughtLineEntry = line.lineEntry;
         Vector3 heading = line.lineEntry - transform.position;
         Debug.DrawRay(transform.position, heading.normalized, Color.yellow, 5);
         fish.reelForce = heading.normalized * reelForce;

@@ -8,23 +8,28 @@ public class Collectible : MonoBehaviour
     private float idleMoveTime;
     [SerializeField]
     private float idleMoveDistance;
-    [SerializeField]
-    protected TopWater topWater;
 
     private Rigidbody rb;
     private bool flee;
     protected bool captured;
     protected IEnumerator movementCoroutine;
     protected CameraController cam;
+    protected TopWater topwater;
 
-    protected virtual void Awake()
+    protected void Awake()
     {
         rb = GetComponent<Rigidbody>();
         cam = FindObjectOfType<CameraController>();
     }
 
-    protected void Start()
+    private void Start()
     {
+        Init();
+    }
+
+    protected virtual void Init()
+    {
+        topwater = FindObjectOfType<TopWater>();
         movementCoroutine = Move();
         StartCoroutine(movementCoroutine);
     }

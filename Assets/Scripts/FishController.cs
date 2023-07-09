@@ -65,9 +65,9 @@ public class FishController : MonoBehaviour
         {
             var baitItem = GetComponentInChildren<BaitItem>();
             baitItem.transform.position = transform.position + transform.forward;
-
             if (Vector3.Distance(transform.position, caughtLineEntry) > offTheHookDistance)
             {
+                Debug.Log("Off the hook");
                 caught = false;
                 reelForce = Vector3.zero;
                 Destroy(baitItem.gameObject);
