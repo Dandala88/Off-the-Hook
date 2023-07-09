@@ -15,6 +15,7 @@ public class Collectible : MonoBehaviour
     protected IEnumerator movementCoroutine;
     protected CameraController cam;
     protected TopWater topwater;
+    private Vector3 fleeDirection;
 
     protected void Awake()
     {
@@ -30,24 +31,27 @@ public class Collectible : MonoBehaviour
     protected virtual void Init()
     {
         topwater = FindObjectOfType<TopWater>();
-        movementCoroutine = Move();
-        StartCoroutine(movementCoroutine);
+        StartCoroutine(Move());
     }
 
     private IEnumerator Move()
     {
-        var distance = flee ? idleMoveDistance : idleMoveDistance * 10;
-        var time = flee ? idleMoveTime : idleMoveTime * 3;
-        rb.AddForce(Extensions.RandomVector3() * distance);
-        yield return new WaitForSeconds(time);
-        StartCoroutine(movementCoroutine);
+        var distance = !flee ? idleMoveDistance : idleMoveDistance * 2;
+        var dir = !flee ? Extensions.RandomVector3() : -fleeDirection;
+        rb.AddForce(dir * distance);
+        transform.forward = -dir;
+        yield return new WaitForSeconds(idleMoveTime);
+        StartCoroutine(Move());
     }
 
     private void OnTriggerEnter(Collider other)
     {
         FishController fish = other.GetComponent<FishController>();
         if (fish != null)
+        {
             flee = true;
+            fleeDirection = fish.transform.position - transform.position;
+        }
     }
 
     private void OnTriggerStay(Collider other)

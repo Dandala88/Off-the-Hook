@@ -32,7 +32,7 @@ public class BaitItem : Collectible
         line.lineEntry = new Vector3(transform.position.x + x, topwater.transform.position.y, transform.position.z + y);
         line.bait = transform;
 
-        StopCoroutine(movementCoroutine);
+        StopAllCoroutines();
         fish.caughtLineEntry = line.lineEntry;
         transform.parent = fish.transform;
         FishController.caught = true;
