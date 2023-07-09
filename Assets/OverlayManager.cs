@@ -9,6 +9,6 @@ public class OverlayManager : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-    bar.element.style.width = (float)GameManager.Instance.calories / GameManager.Instance.calories;
+    bar.element.style.width = (float)GameManager.Instance.calories / GameManager.Instance.calories * 100;
   }
 }
