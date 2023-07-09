@@ -682,6 +682,7 @@ MonoBehaviour:
   caughtDistance: 0.25
   lineEntry: {x: 0, y: 0, z: 0}
   bait: {fileID: 0}
+  gracePeriod: 2
 --- !u!1001 &139435465
 PrefabInstance:
   m_ObjectHideFlags: 0
