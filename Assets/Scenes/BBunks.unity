@@ -400,7 +400,7 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!1 &1631545945
+--- !u!1 &1692286979
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -408,193 +408,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1631545946}
-  - component: {fileID: 1631545952}
-  - component: {fileID: 1631545951}
-  - component: {fileID: 1631545950}
-  - component: {fileID: 1631545949}
-  - component: {fileID: 1631545948}
-  - component: {fileID: 1631545947}
+  - component: {fileID: 1692286981}
+  - component: {fileID: 1692286980}
   m_Layer: 5
-  m_Name: Settings
+  m_Name: Overlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1631545946
+--- !u!114 &1692286980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692286979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: 18991da2e1fdce04cb4e1ea62863d7e4, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 1b9db6e4c4948c74eb8f14139b7b97ab, type: 3}
+  m_SortingOrder: 0
+--- !u!4 &1692286981
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631545945}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_GameObject: {fileID: 1692286979}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1004937618017890574}
-  m_RootOrder: -1
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1631545947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631545945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a803f6f0bf3509745b45d43f08109144, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  labelId: SaveConfirmation
-  prefix: 
---- !u!114 &1631545948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631545945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c064168e574b71b438e1567c82fa1940, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sliderId: MouseSens
-  OnSlide:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1631545952}
-        m_TargetAssemblyTypeName: SettingsController, Assembly-CSharp
-        m_MethodName: setSense
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  initialValue: 0
---- !u!114 &1631545949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631545945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c064168e574b71b438e1567c82fa1940, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sliderId: Volume
-  OnSlide:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1631545952}
-        m_TargetAssemblyTypeName: SettingsController, Assembly-CSharp
-        m_MethodName: setVolume
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  initialValue: 75
---- !u!114 &1631545950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631545945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0e6349eb4cca164cadff843e0eda298, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonId: Close
-  OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 338949118}
-        m_TargetAssemblyTypeName: UIVisualElement, Assembly-CSharp
-        m_MethodName: ShowElement
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1631545951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631545945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0e6349eb4cca164cadff843e0eda298, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonId: Apply
-  OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1631545952}
-        m_TargetAssemblyTypeName: SettingsController, Assembly-CSharp
-        m_MethodName: WriteSettings
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1631545947}
-        m_TargetAssemblyTypeName: UILabel, Assembly-CSharp
-        m_MethodName: SetOpacity
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 1
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1631545952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631545945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7be6f6910822224c84e1623e7b35acb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioController: {fileID: 885431904}
-  volumeSlider: {fileID: 1631545949}
-  sensSlider: {fileID: 1631545948}
-  settingsContainer: {fileID: 338949118}
-  SaveConfirmation: {fileID: 1631545947}
-  inputManager: {fileID: 0}
 --- !u!1001 &1004937618017890565
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -603,18 +456,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3787892337921096333, guid: 3f4c1dd7e1587ad458576041d86c3eeb, type: 3}
-      propertyPath: audioController
+    - target: {fileID: 2789705565539943282, guid: 3f4c1dd7e1587ad458576041d86c3eeb, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 885431904}
+      objectReference: {fileID: 338949118}
     - target: {fileID: 4173587702158310668, guid: 3f4c1dd7e1587ad458576041d86c3eeb, type: 3}
       propertyPath: m_Name
       value: Pause Menu
       objectReference: {fileID: 0}
-    - target: {fileID: 4970452496457032465, guid: 3f4c1dd7e1587ad458576041d86c3eeb, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1631545952}
     - target: {fileID: 5575629813654803851, guid: 3f4c1dd7e1587ad458576041d86c3eeb, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -659,20 +508,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7666137235621963031, guid: 3f4c1dd7e1587ad458576041d86c3eeb, type: 3}
+      propertyPath: audioController
+      value: 
+      objectReference: {fileID: 885431904}
+    - target: {fileID: 7666137235621963031, guid: 3f4c1dd7e1587ad458576041d86c3eeb, type: 3}
+      propertyPath: settingsContainer
+      value: 
+      objectReference: {fileID: 338949118}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 4268815541479351785, guid: 3f4c1dd7e1587ad458576041d86c3eeb, type: 3}
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 5575629813654803851, guid: 3f4c1dd7e1587ad458576041d86c3eeb, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1631545946}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f4c1dd7e1587ad458576041d86c3eeb, type: 3}
---- !u!4 &1004937618017890574 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5575629813654803851, guid: 3f4c1dd7e1587ad458576041d86c3eeb, type: 3}
-  m_PrefabInstance: {fileID: 1004937618017890565}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2767528004809638156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -745,18 +593,6 @@ PrefabInstance:
     - target: {fileID: 3859357707730434604, guid: 433a75725af3e1e41a418ed416f5aee6, type: 3}
       propertyPath: m_Name
       value: Start Menu
-      objectReference: {fileID: 0}
-    - target: {fileID: 4408091540693966368, guid: 433a75725af3e1e41a418ed416f5aee6, type: 3}
-      propertyPath: OnSlide.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: setSense
-      objectReference: {fileID: 0}
-    - target: {fileID: 4408091540693966368, guid: 433a75725af3e1e41a418ed416f5aee6, type: 3}
-      propertyPath: OnSlide.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SettingsController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4408091540693966368, guid: 433a75725af3e1e41a418ed416f5aee6, type: 3}
-      propertyPath: OnSlide.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6050459029069202633, guid: 433a75725af3e1e41a418ed416f5aee6, type: 3}
       propertyPath: audioController
