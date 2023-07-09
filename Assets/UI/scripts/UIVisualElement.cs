@@ -4,7 +4,7 @@ using UnityEngine.UIElements;
 
 public class UIVisualElement : MonoBehaviour
 {
-  private VisualElement element;
+  public VisualElement element;
   public string elementId;
 
   public void OnEnable()
