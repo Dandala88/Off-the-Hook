@@ -5,15 +5,13 @@ using UnityEngine;
 public class Current : MonoBehaviour
 {
     [SerializeField]
-    private Vector3 direction;
-    [SerializeField]
     private float strength;
 
     private void OnTriggerStay(Collider other)
     {
         var fish = other.GetComponent<FishController>();
         if (fish != null)
-            fish.currentForce = direction * strength;
+            fish.currentForce = transform.forward * strength;
     }
 
     private void OnTriggerExit(Collider other)
