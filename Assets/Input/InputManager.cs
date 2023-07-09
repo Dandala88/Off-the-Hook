@@ -39,6 +39,20 @@ public class InputManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    private void LockMouse(bool lck)
+    {
+        if(lck)
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.Confined;
+        }
+    }
+
     private void onEnable()
     {
         invertY = PlayerPrefs.GetInt("invertY", 0) == 1;
@@ -92,6 +106,7 @@ public class InputManager : MonoBehaviour
                 Time.timeScale = 1;
 
             pauseMenu.SetActive(GameManager.Instance.isPaused);
+            LockMouse(GameManager.Instance.isPaused);
         }
     }
 }
