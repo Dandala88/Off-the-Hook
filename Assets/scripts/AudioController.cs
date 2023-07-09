@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class AudioController : MonoBehaviour
 {
-  float volume = 1f;
   public float defaultVolume = 1f;
   public AudioSource audioSource;
   // Start is called before the first frame update
