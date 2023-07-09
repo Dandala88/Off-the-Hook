@@ -47,6 +47,10 @@ public class InputManager : MonoBehaviour
 
     Cursor.visible = false;
     Cursor.lockState = CursorLockMode.Locked;
+
+    invertY = PlayerPrefs.GetInt("invertY", 0) == 1;
+    var mouseFloat = PlayerPrefs.GetFloat("mouseSens", 1f);
+    mouseSensitivity = new Vector2(mouseFloat, mouseFloat);
   }
 
   private void LockMouse(bool lck)
@@ -63,19 +67,12 @@ public class InputManager : MonoBehaviour
     }
   }
 
-  private void onEnable()
-  {
-    invertY = PlayerPrefs.GetInt("invertY", 0) == 1;
-    var mouseFloat = PlayerPrefs.GetFloat("mouseSens", 1f);
-    mouseSensitivity = new Vector2(mouseFloat, mouseFloat);
-  }
-
   public void ChangeMouseSettings(Vector2 mouseSensitivty, bool invY)
   {
     mouseSensitivity = mouseSensitivty;
     invertY = invY;
     playerInput.actions["Rotate"].ApplyParameterOverride((ScaleVector2Processor p) => p.x, mouseSensitivity.x);
-    playerInput.actions["Rotate"].ApplyParameterOverride((ScaleVector2Processor p) => p.x, mouseSensitivity.y);
+    playerInput.actions["Rotate"].ApplyParameterOverride((ScaleVector2Processor p) => p.y, mouseSensitivity.y);
     playerInput.actions["Rotate"].ApplyParameterOverride((InvertVector2Processor p) => p.invertY, invertY);
   }
 

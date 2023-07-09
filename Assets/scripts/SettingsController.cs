@@ -31,7 +31,7 @@ public class SettingsController : MonoBehaviour
     }
 
     sensSlider.slider.SetValueWithoutNotify(sense * 20f);
-    invertToggle.SetValueWithoutNotify(invertY);
+    invertToggle.SetValueWithoutNotify(!invertY);
 
     volume = audioController.getVolume();
     volumeSlider.slider.SetValueWithoutNotify(volume * 100);
@@ -56,9 +56,10 @@ public class SettingsController : MonoBehaviour
 
     PlayerPrefs.SetInt("invertY", invertY ? 1 : 0);
     PlayerPrefs.SetFloat("mouseSens", sense);
+
     if (inputManager)
     {
-      inputManager.ChangeMouseSettings(new Vector2(sense, sense), invertY);
+      inputManager.ChangeMouseSettings(new Vector2(sense, sense), !invertY);
     }
   }
 }
