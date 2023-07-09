@@ -120,8 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idleMoveTime: 3
-  idleMoveDistance: 0.5
-  topWater: {fileID: 0}
+  idleMoveDistance: 10
   topWaterRadius: 10
   reelForce: 7
   hookSetPower: 2

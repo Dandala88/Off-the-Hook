@@ -37,6 +37,7 @@ public class InputManager : MonoBehaviour
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        invertY = true;
     }
 
     private void LockMouse(bool lck)
