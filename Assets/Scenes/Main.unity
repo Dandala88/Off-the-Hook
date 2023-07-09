@@ -1551,6 +1551,7 @@ MonoBehaviour:
   baitItemPrefabs:
   - {fileID: 607042020863936243, guid: a23f522fd0825a447881a83cfd75513d, type: 3}
   calories: 0
+  isPaused: 0
 --- !u!1 &315955917
 GameObject:
   m_ObjectHideFlags: 0
@@ -3286,6 +3287,11 @@ Transform:
   m_Father: {fileID: 201680156}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &719052591 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4173587702158310668, guid: 3f4c1dd7e1587ad458576041d86c3eeb, type: 3}
+  m_PrefabInstance: {fileID: 364089713}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &730357162
 GameObject:
   m_ObjectHideFlags: 0
@@ -9481,7 +9487,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fish: {fileID: 2002726802}
   cameraController: {fileID: 1418092005}
-  pauseMenu: {fileID: 0}
+  pauseMenu: {fileID: 719052591}
 --- !u!1 &1770234576
 GameObject:
   m_ObjectHideFlags: 0
