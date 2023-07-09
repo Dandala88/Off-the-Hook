@@ -1,0 +1,15 @@
+.unity-button {
+    padding: 8px 12px;
+    margin: 0;
+    margin-bottom: 16px;
+    font-size: 24px;
+}
+
+.unity-button.last {
+    margin-bottom: 0;
+}
+
+* {
+    -unity-font: url('project://database/Assets/UI/LondrinaSolid-Light.ttf?fileID=12800000&guid=d1ee46976545c51429504c05afa36e73&type=3#LondrinaSolid-Light');
+    -unity-font-definition: initial;
+}

@@ -9,7 +9,7 @@ TerrainLayer:
   m_Name: coast_sand
   m_DiffuseTexture: {fileID: 2800000, guid: de526ab4a838f624a8adf816b0bf9521, type: 3}
   m_NormalMapTexture: {fileID: 2800000, guid: 99402743c696c3040bccfe7955ac37c5, type: 3}
-  m_MaskMapTexture: {fileID: 0}
+  m_MaskMapTexture: {fileID: 2800000, guid: dfd7356b169a2244496381b067eab3d0, type: 3}
   m_TileSize: {x: 6, y: 6}
   m_TileOffset: {x: 0, y: 0}
   m_Specular: {r: 0, g: 0, b: 0, a: 0}

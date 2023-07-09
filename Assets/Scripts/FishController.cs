@@ -39,8 +39,8 @@ public class FishController : MonoBehaviour
 
         currentSpeed = swimming ? currentSpeed + actualAcceleration * Time.deltaTime : currentSpeed - actualAcceleration * Time.deltaTime;
 
-        if (currentSpeed > maxSpeed) currentSpeed = maxSpeed;
-        if (currentSpeed < 0) currentSpeed = 0;
+    if (currentSpeed > maxSpeed) currentSpeed = maxSpeed;
+    if (currentSpeed < 0) currentSpeed = 0;
 
         if (currentSpeed > 0)
         {
