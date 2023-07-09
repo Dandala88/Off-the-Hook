@@ -431,6 +431,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2789705565539943282, guid: 3f4c1dd7e1587ad458576041d86c3eeb, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2118659216}
+    - target: {fileID: 2789705565539943282, guid: 3f4c1dd7e1587ad458576041d86c3eeb, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3787892337921096333, guid: 3f4c1dd7e1587ad458576041d86c3eeb, type: 3}
       propertyPath: audioController
       value: 
@@ -443,6 +451,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4970452496457032465, guid: 3f4c1dd7e1587ad458576041d86c3eeb, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2118659209}
     - target: {fileID: 5575629813654803851, guid: 3f4c1dd7e1587ad458576041d86c3eeb, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -487,6 +499,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7666137235621963031, guid: 3f4c1dd7e1587ad458576041d86c3eeb, type: 3}
+      propertyPath: inputManager
+      value: 
+      objectReference: {fileID: 1768137065}
+    - target: {fileID: 7666137235621963031, guid: 3f4c1dd7e1587ad458576041d86c3eeb, type: 3}
+      propertyPath: audioController
+      value: 
+      objectReference: {fileID: 1073122087}
+    - target: {fileID: 7666137235621963031, guid: 3f4c1dd7e1587ad458576041d86c3eeb, type: 3}
+      propertyPath: settingsContainer
+      value: 
+      objectReference: {fileID: 2118659216}
     - target: {fileID: 9208519144398030279, guid: 3f4c1dd7e1587ad458576041d86c3eeb, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
@@ -510,7 +534,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4848730258999026387, guid: 3f4c1dd7e1587ad458576041d86c3eeb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2118659216}
   m_SourcePrefab: {fileID: 100100000, guid: 3f4c1dd7e1587ad458576041d86c3eeb, type: 3}
 --- !u!1 &719052591 stripped
 GameObject:
@@ -1323,6 +1350,35 @@ MonoBehaviour:
   reelForce: {x: 0, y: 0, z: 0}
   caughtLineEntry: {x: 0, y: 0, z: 0}
   currentSpeed: 0
+--- !u!1 &2118659208 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4848730258999026387, guid: 3f4c1dd7e1587ad458576041d86c3eeb, type: 3}
+  m_PrefabInstance: {fileID: 364089713}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2118659209 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7666137235621963031, guid: 3f4c1dd7e1587ad458576041d86c3eeb, type: 3}
+  m_PrefabInstance: {fileID: 364089713}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118659208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7be6f6910822224c84e1623e7b35acb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2118659216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118659208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da89bc4b794c4e14e95a06ac9953f00a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  elementId: Settings
 --- !u!1 &2119099761
 GameObject:
   m_ObjectHideFlags: 0
