@@ -18,6 +18,13 @@ public class CameraController : MonoBehaviour
     private Vector2 currentRotation;
     private Vector2 rotateInput;
 
+    private bool started;
+
+    private void Start()
+    {
+        currentRotation = new Vector2(transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.x);
+    }
+
     private void LateUpdate()
     {
         currentRotation.x += rotateInput.x * Time.deltaTime * rotateSpeed;
@@ -32,7 +39,7 @@ public class CameraController : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(currentRotation.y, currentRotation.x, 0);
 
-        if(!FishController.caught)
+        if (!FishController.caught)
             transform.position = follow.position + offset;
     }
 
