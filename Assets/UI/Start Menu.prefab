@@ -51,8 +51,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioController: {fileID: 0}
   volumeSlider: {fileID: 3973121731388344533}
+  sensSlider: {fileID: 4408091540693966368}
   settingsContainer: {fileID: 3256146799740400820}
   SaveConfirmation: {fileID: 3092535907263500462}
+  inputManager: {fileID: 0}
 --- !u!114 &9007153611884602224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,12 +169,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6050459029069202633}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+        m_TargetAssemblyTypeName: SettingsController, Assembly-CSharp
+        m_MethodName: setSense
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
