@@ -41,7 +41,7 @@ public class InputManager : MonoBehaviour
 
     private void LockMouse(bool lck)
     {
-        if(lck)
+        if(!lck)
         {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
@@ -93,6 +93,14 @@ public class InputManager : MonoBehaviour
 
         if (context.canceled)
             fish.Brake(false);
+    }
+
+    public void Resume()
+    {
+        GameManager.Instance.isPaused = false;
+        Time.timeScale = 1;
+        pauseMenu.SetActive(false);
+        LockMouse(false);
     }
 
     public void Pause(InputAction.CallbackContext context)
