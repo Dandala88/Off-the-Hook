@@ -46,7 +46,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "2D Vector",
+                    "name": "Rotate(Mouse)",
                     "id": "9bf9b18c-b2cd-44f3-8479-76b197001cbf",
                     "path": "2DVector(mode=2)",
                     "interactions": "",
