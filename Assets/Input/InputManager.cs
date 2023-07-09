@@ -41,7 +41,7 @@ public class InputManager : MonoBehaviour
 
     private void LockMouse(bool lck)
     {
-        if(lck)
+        if(!lck)
         {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
