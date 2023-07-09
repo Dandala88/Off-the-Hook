@@ -20,6 +20,8 @@ public class InputManager : MonoBehaviour
     public static Vector2 mouseSensitivity;
     public static bool invertY;
 
+    public GameObject pauseMenu;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -35,6 +37,13 @@ public class InputManager : MonoBehaviour
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    private void onEnable()
+    {
+        invertY = PlayerPrefs.GetInt("invertY", 0) == 1;
+        var mouseFloat = PlayerPrefs.GetFloat("mouseSens", 1f);
+        mouseSensitivity = new Vector2(mouseFloat, mouseFloat);
     }
     
     public void ChangeMouseSettings(Vector2 mouseSensitivty, bool invertY)
@@ -70,5 +79,11 @@ public class InputManager : MonoBehaviour
 
         if (context.canceled)
             fish.Brake(false);
+    }
+
+    public void Pause(InputAction.CallbackContext context)
+    { 
+        if(context.performed)
+            pauseMenu.SetActive(!pauseMenu.activeSelf);
     }
 }
