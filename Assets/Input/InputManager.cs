@@ -95,6 +95,14 @@ public class InputManager : MonoBehaviour
             fish.Brake(false);
     }
 
+    public void Resume()
+    {
+        GameManager.Instance.isPaused = false;
+        Time.timeScale = 1;
+        pauseMenu.SetActive(false);
+        LockMouse(false);
+    }
+
     public void Pause(InputAction.CallbackContext context)
     {
         if (context.started)
