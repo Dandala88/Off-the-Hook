@@ -3,6 +3,8 @@
     margin: 0;
     margin-bottom: 16px;
     font-size: 24px;
+    color: #FFDF8E;
+    background-color: #0D3C68;
 }
 
 .unity-button.last {
