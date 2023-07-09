@@ -9,13 +9,13 @@ TerrainLayer:
   m_Name: mub_cracked
   m_DiffuseTexture: {fileID: 2800000, guid: be18616cb01f051408c6c0bd6cc7a350, type: 3}
   m_NormalMapTexture: {fileID: 2800000, guid: 0b8b48207aa602047819b0c459bdd42a, type: 3}
-  m_MaskMapTexture: {fileID: 0}
+  m_MaskMapTexture: {fileID: 2800000, guid: 32d70ece505391d4ba27f108bfc7afe7, type: 3}
   m_TileSize: {x: 6, y: 6}
   m_TileOffset: {x: 0, y: 0}
   m_Specular: {r: 0, g: 0, b: 0, a: 0}
   m_Metallic: 0
   m_Smoothness: 0
-  m_NormalScale: 1
+  m_NormalScale: 1.03
   m_DiffuseRemapMin: {x: 0, y: 0, z: 0, w: 0}
   m_DiffuseRemapMax: {x: 1, y: 1, z: 1, w: 1}
   m_MaskMapRemapMin: {x: 0, y: 0, z: 0, w: 0}
