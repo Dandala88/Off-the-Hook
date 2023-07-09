@@ -7,7 +7,7 @@ using UnityEngine;
 public class BaitItem : Collectible
 {
     [SerializeField]
-    private float topWaterRadius;
+    public float topWaterRadius;
     
     public float reelForce;
     [SerializeField]
@@ -29,7 +29,7 @@ public class BaitItem : Collectible
         float rollAngle = Random.Range(0f, 360f);
         float x = Mathf.Cos(rollAngle * Mathf.Deg2Rad) * topWaterRadius;
         float y = Mathf.Sin(rollAngle * Mathf.Deg2Rad) * topWaterRadius;
-        line.lineEntry = new Vector3(x, topwater.transform.position.y, transform.position.z + y);
+        line.lineEntry = new Vector3(transform.position.x + x, topwater.transform.position.y, transform.position.z + y);
         line.bait = transform;
 
         StopAllCoroutines();

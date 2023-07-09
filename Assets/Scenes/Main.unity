@@ -679,7 +679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68244e424ba1fd43a96ee3ec5898fdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caughtDistance: 1
+  caughtDistance: 0.25
   lineEntry: {x: 0, y: 0, z: 0}
   bait: {fileID: 0}
 --- !u!1001 &139435465
@@ -1610,7 +1610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   calorieTarget: 500
-  numberOfFood: 0
+  numberOfFood: 250
   numberOfBait: 50
   foodItemPrefabs:
   - {fileID: 9220576804989316786, guid: 1a90b52b9056fff46b728589704f6477, type: 3}
@@ -12952,10 +12952,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eatDistance: 2
-  acceleration: 8
+  acceleration: 10
   maxSpeed: 10
   turnTime: 1
-  offTheHookDistance: 20
+  offTheHookDistance: 10
   currentForce: {x: 0, y: 0, z: 0}
   reelForce: {x: 0, y: 0, z: 0}
   caughtLineEntry: {x: 0, y: 0, z: 0}

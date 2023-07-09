@@ -121,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   idleMoveTime: 3
   idleMoveDistance: 10
-  topWaterRadius: 10
+  topWaterRadius: 15
   reelForce: 7
   hookSetPower: 2
 --- !u!1001 &6666096369637520756
