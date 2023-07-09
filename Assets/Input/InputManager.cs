@@ -27,11 +27,20 @@ public class InputManager : MonoBehaviour
   {
     if (instance != null && instance != this)
     {
-      Destroy(this.gameObject);
-    }
-    else
-    {
-      instance = this;
+      if (instance != null && instance != this)
+      {
+        Destroy(this.gameObject);
+      }
+      else
+      {
+        instance = this;
+      }
+
+      playerInput = GetComponent<PlayerInput>();
+
+      Cursor.visible = false;
+      Cursor.lockState = CursorLockMode.Locked;
+      invertY = true;
     }
 
     playerInput = GetComponent<PlayerInput>();
@@ -61,10 +70,10 @@ public class InputManager : MonoBehaviour
     mouseSensitivity = new Vector2(mouseFloat, mouseFloat);
   }
 
-  public void ChangeMouseSettings(Vector2 mouseSensitivty, bool invertY)
+  public void ChangeMouseSettings(Vector2 mouseSensitivty, bool invY)
   {
     mouseSensitivity = mouseSensitivty;
-    InputManager.invertY = invertY;
+    invertY = invY;
     playerInput.actions["Rotate"].ApplyParameterOverride((ScaleVector2Processor p) => p.x, mouseSensitivity.x);
     playerInput.actions["Rotate"].ApplyParameterOverride((ScaleVector2Processor p) => p.x, mouseSensitivity.y);
     playerInput.actions["Rotate"].ApplyParameterOverride((InvertVector2Processor p) => p.invertY, invertY);
