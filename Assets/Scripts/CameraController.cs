@@ -31,12 +31,6 @@ public class CameraController : MonoBehaviour
         currentRotation.y += rotateInput.y * Time.deltaTime * rotateSpeed;
         if (Mathf.Abs(currentRotation.y) > maxYRotate) currentRotation.y = maxYRotate * Mathf.Sign(currentRotation.y);
 
-        var camForward = transform.forward;
-        camForward.y = 0f;
-        var followForward = follow.forward;
-        followForward.y = 0f;
-        var followToCamAngle = Mathf.Abs(Vector3.SignedAngle(camForward, followForward, Vector3.up));
-
         transform.rotation = Quaternion.Euler(currentRotation.y, currentRotation.x, 0);
 
         if (!FishController.caught)
