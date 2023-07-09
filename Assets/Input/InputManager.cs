@@ -37,6 +37,7 @@ public class InputManager : MonoBehaviour
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        invertY = true;
     }
 
     private void LockMouse(bool lck)
@@ -60,10 +61,10 @@ public class InputManager : MonoBehaviour
         mouseSensitivity = new Vector2(mouseFloat, mouseFloat);
     }
     
-    public void ChangeMouseSettings(Vector2 mouseSensitivty, bool invertY)
+    public void ChangeMouseSettings(Vector2 mouseSens, bool invY)
     {
-        mouseSensitivity = mouseSensitivty;
-        invertY = InputManager.invertY;
+        mouseSensitivity = mouseSens;
+        invertY = invY;
         playerInput.actions["Rotate"].ApplyParameterOverride((ScaleVector2Processor p) => p.x, mouseSensitivity.x);
         playerInput.actions["Rotate"].ApplyParameterOverride((ScaleVector2Processor p) => p.x, mouseSensitivity.y);
         playerInput.actions["Rotate"].ApplyParameterOverride((InvertVector2Processor p) => p.invertY, invertY);

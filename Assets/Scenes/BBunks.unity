@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &338949118 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3256146799740400820, guid: 433a75725af3e1e41a418ed416f5aee6, type: 3}
+  m_PrefabInstance: {fileID: 3421467663800308687}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da89bc4b794c4e14e95a06ac9953f00a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &388906571
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,6 +400,54 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!1 &1692286979
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1692286981}
+  - component: {fileID: 1692286980}
+  m_Layer: 5
+  m_Name: Overlay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1692286980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692286979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: 18991da2e1fdce04cb4e1ea62863d7e4, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 1b9db6e4c4948c74eb8f14139b7b97ab, type: 3}
+  m_SortingOrder: 0
+--- !u!4 &1692286981
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692286979}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1004937618017890565
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -397,10 +456,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3787892337921096333, guid: 3f4c1dd7e1587ad458576041d86c3eeb, type: 3}
-      propertyPath: audioController
+    - target: {fileID: 2789705565539943282, guid: 3f4c1dd7e1587ad458576041d86c3eeb, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 885431904}
+      objectReference: {fileID: 338949118}
     - target: {fileID: 4173587702158310668, guid: 3f4c1dd7e1587ad458576041d86c3eeb, type: 3}
       propertyPath: m_Name
       value: Pause Menu
@@ -449,47 +508,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7666137235621963031, guid: 3f4c1dd7e1587ad458576041d86c3eeb, type: 3}
+      propertyPath: audioController
+      value: 
+      objectReference: {fileID: 885431904}
+    - target: {fileID: 7666137235621963031, guid: 3f4c1dd7e1587ad458576041d86c3eeb, type: 3}
+      propertyPath: settingsContainer
+      value: 
+      objectReference: {fileID: 338949118}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4173587702158310668, guid: 3f4c1dd7e1587ad458576041d86c3eeb, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1004937618017890567}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f4c1dd7e1587ad458576041d86c3eeb, type: 3}
---- !u!1 &1004937618017890566 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4173587702158310668, guid: 3f4c1dd7e1587ad458576041d86c3eeb, type: 3}
-  m_PrefabInstance: {fileID: 1004937618017890565}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1004937618017890567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1004937618017890566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0e6349eb4cca164cadff843e0eda298, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonId: Resume
-  OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &2767528004809638156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -562,10 +593,6 @@ PrefabInstance:
     - target: {fileID: 3859357707730434604, guid: 433a75725af3e1e41a418ed416f5aee6, type: 3}
       propertyPath: m_Name
       value: Start Menu
-      objectReference: {fileID: 0}
-    - target: {fileID: 3859357707730434604, guid: 433a75725af3e1e41a418ed416f5aee6, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6050459029069202633, guid: 433a75725af3e1e41a418ed416f5aee6, type: 3}
       propertyPath: audioController

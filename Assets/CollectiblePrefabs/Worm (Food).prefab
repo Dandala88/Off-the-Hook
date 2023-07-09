@@ -119,9 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d998372e0341a45a247110747b5c48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleMoveTime: 0
-  idleMoveDistance: 0
-  topWater: {fileID: 0}
+  idleMoveTime: 3
+  idleMoveDistance: 10
   calories: 10
 --- !u!1001 &190820454656237612
 PrefabInstance:
