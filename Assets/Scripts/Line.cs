@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Line : MonoBehaviour
 {
@@ -25,8 +26,12 @@ public class Line : MonoBehaviour
         {
             lineRenderer.SetPosition(0, bait.position);
             lineRenderer.SetPosition(1, lineEntry);
-            if (Vector3.Distance(bait.position, lineEntry) < caughtDistance)
-                Debug.Log("DEAD");
+            if (lineEntry.y - bait.position.y < caughtDistance)
+            {
+                GameManager.Instance.calories = 0;
+                FishController.caught = false;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
         }
         else
         {
