@@ -12891,7 +12891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eatDistance: 2
-  acceleration: 3
+  acceleration: 5
   maxSpeed: 8
   turnTime: 1
   offTheHookDistance: 20
